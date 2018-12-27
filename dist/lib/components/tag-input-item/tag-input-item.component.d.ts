@@ -4,6 +4,7 @@ export declare class TagInputItemComponent {
     text: string;
     index: number;
     tagRemoved: EventEmitter<number>;
+    readonly isSelected: boolean;
     constructor();
     removeTag(): void;
 }

@@ -1,9 +1,8 @@
 # angular2-tag-input
-Tag input component for Angular 2.
-Updated for Angular2 2.0.0-rc.3.
+Tag input component for Angular 2
 
 ## Demo & Examples
-[View Plunker](http://plnkr.co/edit/uVGOm8yA0zA0OKhgWpvq?p=preview)
+[View Demo](http://www.webpackbin.com/EkDO0p3Ab)
 
 ## Quick Start
 ```
@@ -11,29 +10,40 @@ npm install angular2-tag-input --save
 ```
 
 ```
-// In one of your application components, eg home.ts
-import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
-import {TagInputComponent} from 'angular2-tag-input';
+// In one of your application NgModules
+import {RlTagInputModule} from 'angular2-tag-input';
 
-@Component({
-    template: `<tag-input [(ngModel)]="items">tags</tag-input>`,
-    directives: [TagInputComponent]
+@NgModule({
+  imports: [
+    RlTagInputModule
+  ]
 })
-export class HomePage {
-  items: any;
-  constructor(private navCtrl: NavController) {
-    this.items = ['Pizza', 'Pasta', 'Parmesan'];
-  }
-}
+export class YourModule {}
+
+// In one of your component templates
+<rl-tag-input [(ngModel)]="tags" placeholder="Testing placeholder"></rl-tag-input>
 ```
 
 ## API
 ### Inputs
-- `ngModel` : `string[]` - **Required** Property to store the resulting tag list in.
-- `placeholder` : `string` - **Default**: ``'Add a tag'`` - Placeholder for the `<input>` tag.
-- `delimiterCode` : `string` - **Default**: ``'188'`` - ASCII keycode to split tags on. Defaults to comma.
-- `addOnBlur` : `boolean` - **Default**: `true` - Whether to attempt to add a tag when the input loses focus.
-- `addOnEnter` : `boolean` - **Default**: `true` - Whether to attempt to add a tag when the user presses enter.
-- `addOnPaste` : `boolean` - **Default**: `true` - Whether to attempt to add a tags when the user pastes their clipboard contents.
-- `allowedTagsPattern` : `RegExp` - **Default**: `/.+/` - RegExp that must match for a tag to be added.
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `addOnBlur` | `boolean` | true | Whether to attempt to add a tag when the input loses focus. |
+| `addOnComma` | `boolean` | true | Whether to attempt to add a tag when the user presses comma. |
+| `addOnEnter` | `boolean` | true | Whether to attempt to add a tag when the user presses enter. |
+| `addOnPaste` | `boolean` | true | Whether to attempt to add a tags when the user pastes their clipboard contents. |
+| `addOnSpace` | `boolean` | true | Whether to attempt to add a tags when the user presses space. |
+| `allowDuplicates` | `boolean` | `false` | Allow duplicate tags. |
+| `allowedTagsPattern` | `RegExp` | `/.+/` | RegExp that must match for a tag to be added. |
+| `autocomplete` | `boolean` | `false` | Toggle autocomplete mode on/off |
+| `autocompleteItems` | `string[]` | `[]` | List of suggestions for autocomplete menu |
+| `autocompleteMustMatch` | `boolean` | `true` | Whether a tag must be present in the suggestions list to be valid |
+| `autocompleteSelectFirstItem` | `boolean` | `true` | Pre-highlight the first item in the suggestions list |
+| `placeholder` | `string` | `'Add a tag'` | Placeholder for the `<input>` tag. |
+
+
+### Outputs
+| Name | Type Emitted | Description |
+| --- | --- | --- |
+| `addTag` | `string` | Emits the added tag string |
+| `removeTag` | `string` | Emits the removed tag string |

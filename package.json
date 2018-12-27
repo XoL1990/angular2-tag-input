@@ -1,64 +1,88 @@
 {
   "_args": [
     [
-      "angular2-tag-input",
-      "/Users/bbb/Documents/Apps/bits"
+      {
+        "raw": "angular2-tag-input",
+        "scope": null,
+        "escapedName": "angular2-tag-input",
+        "name": "angular2-tag-input",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\XoL\\Gorrion\\Projects\\loko-parry\\AndroidApp"
     ]
   ],
   "_from": "angular2-tag-input@latest",
-  "_id": "angular2-tag-input@0.1.5",
+  "_id": "angular2-tag-input@1.2.3",
   "_inCache": true,
-  "_installable": true,
   "_location": "/angular2-tag-input",
-  "_nodeVersion": "4.2.4",
+  "_nodeVersion": "6.5.0",
   "_npmOperationalInternal": {
     "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/angular2-tag-input-0.1.5.tgz_1460042482153_0.5370005904696882"
+    "tmp": "tmp/angular2-tag-input-1.2.3.tgz_1485358281820_0.7759524455759674"
   },
   "_npmUser": {
-    "email": "rosslavery@gmail.com",
-    "name": "rlavery"
+    "name": "rlavery",
+    "email": "rosslavery@gmail.com"
   },
-  "_npmVersion": "3.8.5",
+  "_npmVersion": "3.10.3",
   "_phantomChildren": {},
   "_requested": {
-    "name": "angular2-tag-input",
     "raw": "angular2-tag-input",
-    "rawSpec": "",
     "scope": null,
+    "escapedName": "angular2-tag-input",
+    "name": "angular2-tag-input",
+    "rawSpec": "",
     "spec": "latest",
     "type": "tag"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/angular2-tag-input/-/angular2-tag-input-0.1.5.tgz",
-  "_shasum": "befdfa6b288ab61731058e1a28b3211089eaf367",
+  "_resolved": "https://registry.npmjs.org/angular2-tag-input/-/angular2-tag-input-1.2.3.tgz",
+  "_shasum": "3fb6be73bd924570b13f3828f3f14c825592eca7",
   "_shrinkwrap": null,
   "_spec": "angular2-tag-input",
-  "_where": "/Users/bbb/Documents/Apps/bits",
+  "_where": "C:\\Users\\XoL\\Gorrion\\Projects\\loko-parry\\AndroidApp",
   "author": {
     "name": "TEAM COOL"
   },
   "dependencies": {},
   "description": "Tag input component for Angular 2",
   "devDependencies": {
-    "angular2": "^2.0.0-beta.12",
-    "es6-promise": "^3.1.2",
-    "es6-shim": "^0.35.0",
-    "es7-reflect-metadata": "^1.6.0",
-    "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-beta.2",
-    "typescript": "~1.8.7",
-    "webpack": "^1.12.14",
-    "zone.js": "^0.6.6"
+    "@angular/common": "2.2.4",
+    "@angular/compiler": "2.2.4",
+    "@angular/compiler-cli": "2.2.4",
+    "@angular/core": "2.2.4",
+    "@angular/forms": "2.2.4",
+    "@angular/platform-browser": "2.2.4",
+    "@angular/platform-browser-dynamic": "2.2.4",
+    "@angular/platform-server": "2.2.4",
+    "@types/node": "^6.0.45",
+    "awesome-typescript-loader": "^2.2.3",
+    "codelyzer": "~0.0.26",
+    "core-js": "^2.4.1",
+    "node-sass": "^3.10.1",
+    "postcss-loader": "^0.13.0",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.4",
+    "rxjs": "5.0.0-beta.12",
+    "sass-loader": "^4.0.2",
+    "source-map-loader": "^0.1.5",
+    "tslint": "3.13.0",
+    "typescript": "2.0.10",
+    "webpack": "^2.1.0-beta.21",
+    "webpack-dev-server": "^2.1.0-beta.0",
+    "zone.js": "^0.6.25"
   },
   "directories": {},
   "dist": {
-    "shasum": "befdfa6b288ab61731058e1a28b3211089eaf367",
-    "tarball": "https://registry.npmjs.org/angular2-tag-input/-/angular2-tag-input-0.1.5.tgz"
+    "shasum": "3fb6be73bd924570b13f3828f3f14c825592eca7",
+    "tarball": "https://registry.npmjs.org/angular2-tag-input/-/angular2-tag-input-1.2.3.tgz"
   },
-  "gitHead": "ae250dd4927124f3777179be431903ae352a9bd9",
+  "gitHead": "263d2cd806da16a79903e6a0c88c2cfb12de8d92",
   "keywords": [
     "angular2",
     "tag input",
@@ -68,19 +92,27 @@
     "chips input"
   ],
   "license": "ISC",
-  "main": "dist/tag-input.component.js",
+  "main": "dist/index.js",
   "maintainers": [
     {
-      "email": "rosslavery@gmail.com",
-      "name": "rlavery"
+      "name": "rlavery",
+      "email": "rosslavery@gmail.com"
     }
   ],
   "name": "angular2-tag-input",
   "optionalDependencies": {},
+  "peerDependencies": {
+    "@angular/common": "2.2.4",
+    "@angular/core": "2.2.4",
+    "@angular/forms": "2.2.4"
+  },
   "readme": "ERROR: No README data found!",
   "scripts": {
-    "prepublish": "tsc"
+    "build:aot": "ngc -p tsconfig-aot.json",
+    "clean": "rimraf ./dist/",
+    "lint": "tslint lib/**.*.ts",
+    "package:aot": "npm run clean && npm run build:aot",
+    "serve": "webpack-dev-server --config config/webpack.dev.js --progress --profile --watch --content-base demo/"
   },
-  "typings": "dist/tag-input.component.d.ts",
-  "version": "0.1.5"
+  "version": "1.2.3"
 }
