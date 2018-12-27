@@ -113,7 +113,7 @@ var TagInputAutocompleteComponent = (function () {
         this.goToNext();
     };
     TagInputAutocompleteComponent.prototype.selectItem = function (itemIndex) {
-        var itemToEmit = itemIndex ? this.items[itemIndex] : this.items[this.selectedItemIndex];
+        var itemToEmit = itemIndex != null ? this.items[itemIndex] : this.items[this.selectedItemIndex];
         if (itemToEmit) {
             this.itemSelected.emit(itemToEmit);
         }
